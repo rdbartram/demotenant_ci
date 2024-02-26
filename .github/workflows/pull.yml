@@ -1,0 +1,31 @@
+name: Continuous Integration
+jobs:
+  build:
+    runs-on: windows-latest
+    env: 
+      CI_COMMIT_MESSAGE: Intune Configuration Export
+      CI_COMMIT_AUTHOR: Intune CI
+    steps:
+    - uses: actions/checkout@v3
+
+    # Build steps
+    - name: Export Configuration
+      shell: pwsh
+      env:
+        demousername: ${{ secrets.TEST_USERNAME }}
+        demopassword: ${{ secrets.TEST_PASSWORD }}
+      run: |
+        Install-Module Microsoft365DSC -Scope CurrentUser -Force
+
+        Update-M365DSCDependencies -Scope CurrentUser -Force 
+
+        $credential = New-Object PSCredential -Argumentlist $ENV:demousername, ($ENV:demopassword|Convertto-securestring -force -asplaintext)
+        Export-M365DSCConfiguration -Components @("IntuneSettingCatalogCustomPolicyWindows10") -Credential $Credential -Path ./Intune 
+
+    # Commit and push all changed files.
+    - name: GIT Commit Build Artifacts (coverage, dist, devdist, docs)
+      run: |
+        git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+        git config --global user.email "username@users.noreply.github.com"
+        git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
+        git push

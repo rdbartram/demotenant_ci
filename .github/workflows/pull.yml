@@ -17,8 +17,8 @@ jobs:
     - name: Export Configuration
       shell: pwsh
       env:
-        demousername: ${{ secrets.TEST_USERNAME }}
-        demopassword: ${{ secrets.TEST_PASSWORD }}
+        demousername: ${{ secrets.demousername }}
+        demopassword: ${{ secrets.demopassword }}
       run: |
         Install-Module Microsoft365DSC -Scope CurrentUser -Force
 

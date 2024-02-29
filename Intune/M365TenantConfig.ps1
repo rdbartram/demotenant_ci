@@ -44,8 +44,8 @@ Configuration M365TenantConfig
                 MSFT_MicrosoftGraphdeviceManagementConfigurationSetting{
 
                     SettingInstance = MSFT_MicrosoftGraphDeviceManagementConfigurationSettingInstance{
-                        odataType = '#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance'
                         SettingDefinitionId = 'device_vendor_msft_policy_config_authentication_allowaadpasswordreset'
+                        odataType = '#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance'
 
                         choiceSettingValue = MSFT_MicrosoftGraphDeviceManagementConfigurationChoiceSettingValue{
 
@@ -58,8 +58,8 @@ Configuration M365TenantConfig
                 MSFT_MicrosoftGraphdeviceManagementConfigurationSetting{
 
                     SettingInstance = MSFT_MicrosoftGraphDeviceManagementConfigurationSettingInstance{
-                        odataType = '#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance'
                         SettingDefinitionId = 'device_vendor_msft_bitlocker_requiredeviceencryption'
+                        odataType = '#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance'
 
                         choiceSettingValue = MSFT_MicrosoftGraphDeviceManagementConfigurationChoiceSettingValue{
 

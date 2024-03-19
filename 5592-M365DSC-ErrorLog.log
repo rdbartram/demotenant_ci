@@ -1,0 +1,20 @@
+[2024/03/19 01:49:31]
+{NotSpecified}
+Microsoft.Graph.PowerShell.AuthenticationException: Authentication needed. Please call Connect-MgGraph.
+   at Microsoft.Graph.PowerShell.Authentication.Core.Utilities.AuthenticationHelpers.GetAuthenticationProviderAsync(IAuthContext authContext)
+   at Microsoft.Graph.PowerShell.Authentication.Helpers.HttpHelpers.GetGraphHttpClient()
+   at Microsoft.Graph.Beta.PowerShell.Module.BeforeCreatePipeline(InvocationInfo invocationInfo, HttpPipeline& pipeline)
+   at Microsoft.Graph.Beta.PowerShell.Module.CreatePipeline(InvocationInfo invocationInfo, String parameterSetName)
+   at Microsoft.Graph.Beta.PowerShell.Cmdlets.GetMgBetaDeviceManagementConfigurationPolicy_List.ProcessRecordAsync()
+"Error during Export:"
+at Get-MgBetaDeviceManagementConfigurationPolicy<Process>, C:\Users\runneradmin\Documents\PowerShell\Modules\Microsoft.Graph.Beta.DeviceManagement\2.15.0\exports\ProxyCmdletDefinitions.ps1: line 21802
+at Export-TargetResource, C:\Users\runneradmin\Documents\PowerShell\Modules\Microsoft365DSC\1.24.313.1\DSCResources\MSFT_IntuneSettingCatalogCustomPolicyWindows10\MSFT_IntuneSettingCatalogCustomPolicyWindows10.psm1: line 566
+at Start-M365DSCConfigurationExtract, C:\Users\runneradmin\Documents\PowerShell\Modules\Microsoft365DSC\1.24.313.1\Modules\M365DSCReverse.psm1: line 649
+at Export-M365DSCConfiguration, C:\Users\runneradmin\Documents\PowerShell\Modules\Microsoft365DSC\1.24.313.1\Modules\M365DSCUtil.psm1: line 1369
+at <ScriptBlock>, D:\a\_temp\f0a752a4-139e-4a1a-93f5-dad77ee5ece5.ps1: line 7
+at <ScriptBlock>, <No file>: line 1
+admin@M365x88829256.onmicrosoft.com
+TenantId: M365x88829256.onmicrosoft.com
+
+
+
